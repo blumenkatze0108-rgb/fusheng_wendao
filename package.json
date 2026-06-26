@@ -5,23 +5,23 @@
     "build": "tsc -b && vite build"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-router-dom": "latest",
-    "zustand": "latest",
-    "dexie": "latest",
-    "zod": "latest",
-    "vite-plugin-pwa": "latest",
-    "lucide-react": "latest"
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "5.4.11",
+    "typescript": "5.6.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.28.0",
+    "zustand": "4.5.5",
+    "dexie": "4.0.10",
+    "zod": "3.24.1",
+    "vite-plugin-pwa": "0.21.1",
+    "lucide-react": "0.468.0"
   },
   "devDependencies": {
-    "vitest": "latest",
-    "jsdom": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "vitest": "2.1.8",
+    "jsdom": "25.0.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1"
   },
   "engines": {
     "node": ">=20"
