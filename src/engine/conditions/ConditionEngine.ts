@@ -1,0 +1,2 @@
+import type {Condition,SaveGame} from '../../types/game';
+export const ConditionEngine={check(c:Condition,s:SaveGame){if(c.type==='statMin')return s.player.stats[c.stat]>=c.value;if(c.type==='location')return s.currentLocationId===c.locationId;if(c.type==='flag')return Boolean(s.flags[c.flag])===c.value;if(c.type==='time')return ['清晨','上午','午后','黄昏','夜间','深夜'][s.time.slot]===c.slot;return false},all(cs:Condition[]|undefined,s:SaveGame){return (cs??[]).every(c=>this.check(c,s))}};
