@@ -1,0 +1,5 @@
+import {useState} from 'react';
+import type {ActionDef,Hotspot} from '../../types/game';
+import {actions} from '../../data/actions/actions';
+import {ActionDetail} from './ActionDetail';
+export function ActionDrawer({hotspot,onClose,onPerform}:{hotspot?:Hotspot;onClose:()=>void;onPerform:(id:string,pool:string[])=>void}){const list=(hotspot?.availableActions??[]).map(id=>actions.find(a=>a.id===id)).filter((a):a is ActionDef=>Boolean(a));const [selected,setSelected]=useState<ActionDef|undefined>();if(!hotspot)return null;return <div className="action-drawer"><section><button className="close-line" onClick={onClose}>收起</button><h2>{hotspot.label}</h2><p>{hotspot.description}</p><div className="action-choices">{list.map(a=><button key={a.id} onClick={()=>setSelected(a)} className={selected?.id===a.id?'chosen':''}><b>{a.label}</b><span>{a.description}</span></button>)}</div>{selected&&<ActionDetail action={selected} onConfirm={()=>onPerform(selected.id,hotspot.eventPool)}/>}</section></div>;}

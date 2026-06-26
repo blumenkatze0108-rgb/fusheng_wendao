@@ -11,3 +11,8 @@
 
 ## 0.1.2 - 2026-06-26
 - 针对 EdgeOne 的 TS2882 CSS side-effect import 报错，保留 `src/vite-env.d.ts` 并补充 `src/global.d.ts` 声明 `*.css` 模块。
+
+## 0.2.0 - 2026-06-26
+- 第一阶段 UI 与交互重制：拆分 App 路由、GameShell、启动页、主菜单、分步新游戏、世界生成页、居所场景、行动抽屉、行动结果、事件场景、SVG 地图、行囊、旧录和设置。
+- 新增 AssetRepository/useAssetUrl 与 FontFace 本地字体加载，用户素材和字体刷新后可从 IndexedDB 读取并显示/应用。
+- 重写样式系统为冷灰、雾青、深墨、松绿视觉方向，并补充横竖屏差异布局。

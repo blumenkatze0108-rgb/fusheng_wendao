@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';import {useNavigate} from 'react-router-dom';
+const steps=['推演山河','定下州域','衍生宗门','安置众生','埋下机缘','书写命数'];
+export function WorldGeneratingScreen(){const [i,setI]=useState(0);const nav=useNavigate();useEffect(()=>{if(i<steps.length){const t=window.setTimeout(()=>setI(i+1),420);return()=>window.clearTimeout(t);}},[i]);return <main className="generating-screen"><section><h1>{i>=steps.length?'此世已成。':steps[i]}</h1><ol>{steps.map((s,idx)=><li className={idx<i?'done':idx===i?'current':''} key={s}>{s}</li>)}</ol>{i>=steps.length&&<button className="brush-button" onClick={()=>nav('/game')}>入世</button>}</section></main>;}

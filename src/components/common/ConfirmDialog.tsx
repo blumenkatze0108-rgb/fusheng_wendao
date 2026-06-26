@@ -1,0 +1,1 @@
+export function ConfirmDialog({title,body,onConfirm,onCancel}:{title:string;body:string;onConfirm:()=>void;onCancel:()=>void}){return <div className="veil"><section className="confirm"><h2>{title}</h2><p>{body}</p><div className="dialog-actions"><button onClick={onCancel}>再想想</button><button className="danger" onClick={onConfirm}>确认</button></div></section></div>;}

@@ -1,0 +1,3 @@
+import type {Effect,SaveGame} from '../../types/game';
+function effectText(e:Effect){if(e.type==='stat')return `${e.stat} ${e.amount>0?'+':''}${e.amount}`;if(e.type==='item')return `${e.itemId} ×${e.amount}`;if(e.type==='travel')return `前往 ${e.locationId}`;if(e.type==='flag')return '线索已记录';return e.text;}
+export function ActionResult({result,onContinue}:{result:{title:string;text:string;effects:Effect[];after:SaveGame};onContinue:()=>void}){return <div className="result-scene"><article><small>行动结果</small><h2>{result.title}</h2><p>{result.text}</p><ul>{result.effects.map((e,i)=><li key={i}>{effectText(e)}</li>)}</ul><p className="result-hint">时间向前推移，若机缘临近，下一幕会自然浮现。</p><button className="brush-button" onClick={onContinue}>继续</button></article></div>;}
