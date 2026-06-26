@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "test": "vitest run",
+    "build": "tsc -b && vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "zustand": "latest",
+    "dexie": "latest",
+    "zod": "latest",
+    "vite-plugin-pwa": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "vitest": "latest",
+    "jsdom": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "private": true,
+  "type": "module"
+}
