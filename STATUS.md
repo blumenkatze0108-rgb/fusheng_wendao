@@ -18,7 +18,7 @@
 - 图片裁切目前提供缩放/位置/适配记录与预览，尚未做像素级裁切导出。
 
 ## 最近测试结果
-- 2026-06-26：本次仅处理构建部署问题，已将依赖固定为明确稳定版本，并修复 React 类型导入、Vite CSS 类型声明、EventEngine 空选项保护、Zod/Dexie 存档迁移类型。当前 Codex 环境 `npm install` 仍因 npm registry HTTP 403 无法安装依赖，因此本地 `npm run test` / `npm run build` 仍受依赖缺失影响，未声称构建成功。
+- 2026-06-26：本次仅处理构建部署问题，已将依赖固定为明确稳定版本，并修复 React 类型导入、Vite CSS 类型声明、EventEngine 空选项保护、Zod/Dexie 存档迁移类型。当前 Codex 环境 `npm install` 仍因 npm registry HTTP 403 无法安装依赖，因此本地 `npm run test` / `npm run build` 仍受依赖缺失影响，未声称构建成功。本次根据 EdgeOne 的 TS2882 CSS side-effect import 报错补充 `src/global.d.ts` 作为 Vite 类型声明的兜底。
 
 ## 下一任务目标
 - 阶段 2：扩展境界突破、功法、伤势寿元、更多地点与旅行事件。

@@ -8,3 +8,6 @@
 - 固定前端依赖版本，移除 latest。
 - 修复构建相关 TypeScript 类型问题：React 事件类型、Vite 环境声明、事件选项空值保护、存档迁移与 Zod schema 类型。
 - 记录当前 Codex 环境 npm registry 403 对本地验证的影响。
+
+## 0.1.2 - 2026-06-26
+- 针对 EdgeOne 的 TS2882 CSS side-effect import 报错，保留 `src/vite-env.d.ts` 并补充 `src/global.d.ts` 声明 `*.css` 模块。
