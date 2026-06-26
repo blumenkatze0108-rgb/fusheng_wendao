@@ -10,11 +10,13 @@ async function loadFont(fontId:string|undefined,target:'title'|'body'){
     const record=await db.fonts.get(fontId);
     if(!record){document.documentElement.style.setProperty(variable,defaults[target]);return;}
     const family=`Fusheng-${target}-${record.id.replace(/[^a-zA-Z0-9_-]/g,'')}`;
-    const face=new FontFace(family,record.blob);
+    const fontData=await record.blob.arrayBuffer();
+    const face=new FontFace(family,fontData);
     await face.load();
     document.fonts.add(face);
     document.documentElement.style.setProperty(variable,`"${family}", ${defaults[target]}`);
-  }catch{
+  }catch(error){
+    console.warn(`本地字体加载失败，已恢复默认${target==='title'?'标题':'正文'}字体。`,error);
     document.documentElement.style.setProperty(variable,defaults[target]);
   }
 }

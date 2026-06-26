@@ -18,8 +18,9 @@
 - 图片裁切目前提供缩放/位置/适配记录与预览，尚未做像素级裁切导出。
 
 ## 最近测试结果
-- 2026-06-26：UI 重制前运行 `npm run test`，当前 Codex 环境缺少 node_modules，vitest 不存在，命令失败。
-- 2026-06-26：UI 重制前后运行 `npm run build`，当前 Codex 环境缺少 node_modules，React/Vite/Dexie/Zod/Zustand 等模块不可解析，命令失败；未声称构建成功。
+- 2026-06-26：本次修复 `useLocalFont`，将字体 Blob 通过 `arrayBuffer()` 转为 FontFace 可接受的 BinaryData，并保留 `face.load()`、`document.fonts.add()`、CSS 变量更新、失败回退和错误日志。
+- 2026-06-26：`npm install` 在当前 Codex 环境仍因 npm registry HTTP 403 失败。
+- 2026-06-26：`npm run build` 已实际运行，退出码 1；当前 Codex 环境缺少 node_modules，React/Vite/Dexie/Zod/Zustand 等模块不可解析。该环境无法验证 dist 生成，未声称构建成功。
 
 ## 下一任务目标
 - 阶段 2：扩展境界突破、功法、伤势寿元、更多地点与旅行事件。

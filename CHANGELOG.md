@@ -16,3 +16,7 @@
 - 第一阶段 UI 与交互重制：拆分 App 路由、GameShell、启动页、主菜单、分步新游戏、世界生成页、居所场景、行动抽屉、行动结果、事件场景、SVG 地图、行囊、旧录和设置。
 - 新增 AssetRepository/useAssetUrl 与 FontFace 本地字体加载，用户素材和字体刷新后可从 IndexedDB 读取并显示/应用。
 - 重写样式系统为冷灰、雾青、深墨、松绿视觉方向，并补充横竖屏差异布局。
+
+## 0.2.1 - 2026-06-26
+- 修复本地字体加载的 TypeScript 构建错误：先将 Blob 转为 ArrayBuffer，再传入 FontFace。
+- 保留字体加载、document.fonts 注册、CSS 变量更新、失败回退与错误日志。
